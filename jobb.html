@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobb hos oss – AI Innovate</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    select, textarea, input[type="file"] {
+      margin: 0.5rem 0;
+      padding: 0.75rem;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 0.5rem;
+      border: none;
+    }
+    .message-box {
+      margin-top: 1rem;
+      background-color: #111;
+      padding: 1rem;
+      border-radius: 1rem;
+      font-style: italic;
+      color: #0ff;
+      display: none;
+    }
+    form {
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="assets/ai-innovate-logo.jpeg" alt="AI Innovate Logo" class="logo" />
+    <h1>Bli med i AI Innovate</h1>
+    <p class="tagline">Rekrutter deg selv – og bygg din fremtid</p>
+    <a href="index.html" class="btn">Tilbake</a>
+  </header>
+  <main>
+    <section class="recruit">
+      <h2>👔 Jobb hos oss</h2>
+      <p>Som medlem av AI Innovate kan du starte å jobbe umiddelbart.</p>
+      <p><strong>Første oppdrag:</strong> Rekrutter 3 personer</p>
+      <a href="https://richard141271.github.io/APP/#/jobb" class="btn primary">Start nå i appen</a>
+
+      <hr style="margin:2rem 0;opacity:0.1" />
+
+      <h3>📄 Søk på annen stilling</h3>
+      <form id="jobbsoknad">
+        <select id="stilling" required>
+          <option value="">Ønsket stilling</option>
+          <option>Rekrutterer</option>
+          <option>Teamleder</option>
+          <option>Rekrutteringsleder</option>
+          <option>Avdelingsleder</option>
+          <option>Områdesjef</option>
+          <option>Fylkesleder</option>
+          <option>Vekst og utviklingsleder</option>
+          <option>Utvikling og kreativitetsleder</option>
+          <option>Leder for programmering og IT</option>
+          <option>Annet – beskriv under</option>
+        </select>
+        <textarea rows="4" placeholder="Hvorfor søker du?" required></textarea>
+        <input type="file" />
+        <button type="submit" class="btn primary">Send søknad</button>
+      </form>
+
+      <div class="message-box" id="melding"></div>
+    </section>
+  </main>
+  <footer>
+    <p>Kontakt oss: <a href="mailto:kontakt@aiinnovate.no">kontakt@aiinnovate.no</a></p>
+    <p>© AI Innovate AS</p>
+  </footer>
+  <script>
+    document.getElementById('jobbsoknad').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const stilling = document.getElementById('stilling').value;
+      const melding = document.getElementById('melding');
+      if (stilling.toLowerCase().includes('rekrutterer')) {
+        melding.innerHTML = "✅ Du er ansatt som rekrutterer. Første oppdrag: Rekrutter 3 personer.";
+      } else {
+        melding.innerHTML = "⚠️ Den søkte stillingen i området er dessverre ikke tilgjengelig nå, men du kan starte nå som rekrutterer.<br><strong>Første oppdrag:</strong> Rekrutter 3 medlemmer.";
+      }
+      melding.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
