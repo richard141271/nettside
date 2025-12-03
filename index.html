@@ -1,41 +1,215 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Innovate AS</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Innovate AS – Prediktive KI-systemer</title>
+    <meta name="description" content="Prediktive KI-systemer for feltarbeid, helse og sanntidsanalyse. AI Innovate AS - Lek-Bienes Vokter™ MVP.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AI Innovate AS",
+      "url": "https://aiinnovate.no",
+      "logo": "https://aiinnovate.no/logo.png",
+      "contactPoint": [{"@type": "ContactPoint","telephone": "+47 47 37 24 06","contactType": "customer service","email": "post@aiinnovate.no"}],
+      "address": {"@type": "PostalAddress","streetAddress": "Fredriksfrydveien 2","addressLocality": "TISTEDAL","postalCode": "1792","addressCountry": "NO"}
+    }
+    </script>
+    <style>
+        :root{
+            --bg: #0d0d0d;
+            --panel: #111; 
+            --muted: #888;
+            --accent: #00c6ff;
+            --card-border: #222;
+            --text: #e6e6e6;
+            --max-text-width: 72ch;
+        }
+
+        html,body{height:100%;}
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: var(--bg); 
+            color: var(--text); 
+            -webkit-font-smoothing:antialiased;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container { 
+            width: 100%;
+            max-width: 1100px; 
+            padding: 40px 24px; 
+        }
+
+        /* HEADER */
+        .header-section { text-align: center; margin-bottom: 48px; padding-top: 20px; }
+        .logo-box { display:inline-block; margin-bottom:8px; }
+        .logo-symbol { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 4.6rem; line-height: 1; background: linear-gradient(45deg, var(--accent), #0066cc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 28px rgba(0,198,255,0.22); display:block; margin-bottom:-6px; letter-spacing:-3px; }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-size: 1.9rem; font-weight: 700; color: #fff; letter-spacing: 1.5px; text-transform: uppercase; }
+        .logo-tm { font-size:0.45em; vertical-align: top; color:var(--accent); }
+        .tagline { font-size: 1.02rem; color: var(--muted); margin-top: 10px; font-weight: 300; letter-spacing: 0.6px; }
+
+        /* HERO */
+        .hero-card { background: linear-gradient(145deg, #121212, #1a1a1a); border-radius: 16px; padding: 30px; margin-bottom: 44px; box-shadow: 0 12px 30px rgba(0,0,0,0.55); display:flex; gap:20px; align-items: flex-start; border: 1px solid var(--card-border); }
+        .hero-accent { width:6px; background: linear-gradient(180deg,var(--accent),#0072ff); border-radius:6px; flex-shrink:0; margin-left:-6px; }
+        .hero-content{ flex:1; }
+        .badge { background-color: rgba(0,198,255,0.12); color: var(--accent); padding: 6px 12px; border-radius: 999px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 12px; border:1px solid rgba(0,198,255,0.08); }
+        .hero-title { font-family: 'Montserrat', sans-serif; color: #fff; font-size: 1.8rem; margin: 0 0 10px 0; }
+        .lead-text { font-size: 1.03rem; line-height: 1.6; color: #d0d0d0; margin-bottom: 14px; max-width: var(--max-text-width); }
+        .hero-meta{ color: var(--muted); font-size:0.92rem; }
+        .hero-meta a{ color: var(--accent); }
+        .hero-illustration{ width:120px; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+        .hero-illustration svg{ width:96px; height:96px; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6)); }
+
+        /* SECTION */
+        .section { margin-top: 36px; }
+        .section-title { font-family: 'Montserrat', sans-serif; font-size: 1.35rem; color: #fff; border-bottom: 2px solid #1b1b1b; padding-bottom: 12px; margin-bottom: 22px; }
+
+        .content { max-width: var(--max-text-width); }
+
+        /* GRID */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+        .tech-card { background: linear-gradient(180deg,#111,#141414); padding: 22px; border-radius: 12px; border: 1px solid #1e1e1e; transition: transform .18s ease, box-shadow .18s ease; }
+        .tech-card:hover{ transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+        .tech-card h3{ color: var(--accent); font-family:'Montserrat',sans-serif; margin-top:0; }
+        .tech-card p{ color: #e6e6e6; }
+
+        /* ROADMAP LIST */
+        .roadmap-list { display:block; margin-top:12px; }
+        .roadmap-item { background:#131313; border-left:6px solid rgba(0,198,255,0.12); padding:12px 16px; margin-bottom:12px; border-radius:8px; color:#ddd; display:flex; justify-content:space-between; align-items:center; }
+        .roadmap-item .status{ color:var(--muted); font-size:0.9rem; }
+
+        /* CTA */
+        .btn { display:inline-block; background:var(--accent); color:#03131a; padding:12px 18px; border-radius:8px; font-weight:700; text-decoration:none; box-shadow:0 6px 18px rgba(0,198,255,0.12); margin-top:14px; }
+        .btn:hover{ transform:translateY(-2px); }
+
+        /* FOOTER */
+        .footer{ margin-top:46px; text-align:center; color:var(--muted); border-top:1px solid #1b1b1b; padding-top:26px; padding-bottom:40px; }
+        .footer .small{ font-size:0.86rem; }
+        .footer a{ color:var(--accent); }
+
+        /* ACCESSIBILITY */
+        a:focus{ outline: 3px solid rgba(0,198,255,0.18); outline-offset:3px; }
+
+        /* RESPONSIVE */
+        @media (max-width:900px){ .hero-card{flex-direction:row; gap:16px;} }
+        @media (max-width:640px){ .logo-symbol{ font-size:3.4rem; } .logo-text{ font-size:1.4rem; } .hero-card{ flex-direction:column; padding:18px; } .hero-illustration{ width:100%; } }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="assets/ai-innovate-logo.jpeg" alt="AI Innovate Logo" class="logo" />
-    <h1>AI Innovate</h1>
-    <p class="tagline">Ikke bare et selskap – et kunstverk i seg selv.</p>
-    <a href="om-oss.html" class="btn">Om oss</a>
-    <a href="bli-med.html" class="btn primary">Bli med</a>
-    <a href="jobb.html" class="btn">💻 Jobb</a>
-  </header>
-  <main>
-    <section class="recruit">
-      <h2>Bli med og bygg fremtiden</h2>
-      <p>
-        Tenk deg en arbeidsplass uten sjef. En organisasjon styrt av kunstig intelligens.
-        Et system der du rekrutterer deg selv, bygger din egen rolle, og får betalt for innsatsen – ikke for å sitte i ro.
-      </p>
-      <p>
-        Vi er AI Innovate – et digitalt økosystem med ekte mennesker, ekte kunst og ekte verdier.
-        Du kan være med fra starten. Nå.
-      </p>
-      <p>
-        Her rekrutterer du, selger, bygger, skaper – og tjener.
-        Vi har ikke tid til passive tilskuere. Vi trenger folk som tar grep, og vil gjøre en forskjell.
-      </p>
-      <a href="bli-med.html" class="btn primary">Rekrutter deg selv</a>
-    </section>
-  </main>
-  <footer>
-    <p>Kontakt oss: <a href="mailto:kontakt@aiinnovate.no">kontakt@aiinnovate.no</a></p>
-    <p>© AI Innovate AS</p>
-  </footer>
+    <div class="container">
+        <header class="header-section">
+            <div class="logo-box">
+                <span class="logo-symbol">Ai</span>
+                <span class="logo-text">Innovate AS<span class="logo-tm">©</span></span>
+            </div>
+            <div class="tagline">Prediktive KI-systemer for feltarbeid og automatisert drift.</div>
+        </header>
+
+        <main id="main">
+            <section class="section">
+                <h2 class="section-title">Om AI Innovate AS</h2>
+                <div class="content">
+                    <p>
+                        <strong>AI Innovate AS</strong> utvikler <strong>prediktive KI-systemer</strong> for feltarbeid, helse og automatiserte beslutninger. Vi kombinerer edge-AI, geodata og sanntidsanalyse for å løse praktiske utfordringer i bransjer som birøkt, eiendom og logistikk. Målet er å bygge en mest mulig autonom organisasjon ledet av kunstig intelligens, hvor menneskelig friksjon minimeres gjennom en fleksibel outsourcing- og partnerskapsmodell.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Aktiv MVP: Lek-Bienes Vokter™</h2>
+                <div class="hero-card" aria-labelledby="mvp-title">
+                    <div class="hero-accent" aria-hidden="true"></div>
+                    <div class="hero-illustration" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrasjon: bie">
+                            <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#00c6ff"/><stop offset="1" stop-color="#0072ff"/></linearGradient></defs>
+                            <g fill="none" stroke="url(#g1)" stroke-width="2"><path d="M9 32c0-9.94 8.06-18 18-18s18 8.06 18 18-8.06 18-18 18S9 41.94 9 32z" opacity="0.08" fill="#07121a"/><circle cx="32" cy="32" r="6" fill="url(#g1)"/></g>
+                        </svg>
+                    </div>
+
+                    <div class="hero-content">
+                        <div class="badge">Aktiv utvikling & datainnsamling</div>
+                        <h3 id="mvp-title" class="hero-title">Revolusjonerende Hands‑Free KI‑system for Birøkt</h3>
+                        <p class="lead-text">Lek‑Bienes Vokter™ er et system som gjør kubeinspeksjonen 100% hands‑free. Ved hjelp av bodycam og sanntids KI‑analyse mottar birøkteren umiddelbar verbal feedback om sykdom, middtrykk og dronningstatus. Anonymiserte data aggregeres i skyen og brukes til prediktiv smittesporing i samarbeid med relevante myndigheter.</p>
+                        <p class="hero-meta">Status: Prototyping og datainnsamling mot Innovasjon Norge‑søknad. </p>
+
+                        <a class="btn" href="mailto:post@aiinnovate.no?subject=Meld%20interesse%20Lek-Bienes%20Vokter%20pilot">Meld interesse for pilot / demo</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Møt Aurora Solvind – Vår AI‑leder</h2>
+                <div class="content">
+                    <div style="background:linear-gradient(180deg,#101214,#141416); border:1px solid rgba(0,198,255,0.08); padding:18px; border-radius:10px; color:#ddd;">
+                        <strong>Autonom ledelse og driftstyring</strong>
+                        <p style="margin-top:8px;">Aurora Solvind er AI Innovate AS' autonome styringssystem og digitale leder. Hun automatiserer interne prosesser, tar prediktive beslutninger, optimaliserer ressursallokering og fungerer som merkevarepersonlighet. Hensikten er å demonstrere en skalerbar forretningsmodell hvor KI overtar repeterbare lederoppgaver, samtidig som menneskelig kontroll beholdes der det er nødvendig.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Vår Teknologi‑Stack</h2>
+                <div class="grid-container" role="list">
+                    <article class="tech-card" role="listitem">
+                        <h3>Sanntids KI (Vision)</h3>
+                        <p>Pixel‑for‑pixel videoanalyse via <strong>OpenAI Vision / Edge AI</strong> for å oppdage tidlige sykdomstegn.</p>
+                    </article>
+
+                    <article class="tech-card" role="listitem">
+                        <h3>Hands‑Free UX</h3>
+                        <p>Stemmekontrollert grensesnitt og automatisk datafangst via sensorer — telefonen kan ligge i lomma.</p>
+                    </article>
+
+                    <article class="tech-card" role="listitem">
+                        <h3>Geospatial Data</h3>
+                        <p>Integrasjon mot <strong>Google Maps API</strong> og offentlige datakilder for automatisk smittesporing og visualisering.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Prosjekter & Plattformmoduler</h2>
+                <div class="content">
+                    <div style="margin-bottom:12px;">
+                        <strong>LEK‑Systemet:</strong> Plattformen for dataflyt, KI‑automatisering og modulært samspill mellom tjenester. (Fundamentet for all fremtidig utvikling)
+                    </div>
+                    <div style="margin-bottom:12px;">
+                        <strong>App‑moduler (Kalender/Oppgave):</strong> Automatiserte moduler for tidsstyring og logistikk basert på KI‑anbefalinger. (Første skalerbare modul etter Vokter‑appen)
+                    </div>
+                    <div style="margin-bottom:12px;">
+                        <strong>Eiendom / Energi‑automatisering:</strong> KI‑drevet styring av strømforbruk og vedlikehold i kommersielle bygg. (Fremtidig vertikal for LEK‑systemet)
+                    </div>
+                    <div style="margin-bottom:12px;">
+                        <strong>ArtToken / Snugg:</strong> Plattform for kunst/AR og andre kreative KI‑drevne produkter og lisensiering.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Strategisk Roadmap</h2>
+                <div class="roadmap-list">
+                    <div class="roadmap-item"><div><strong>Q1–Q2 2025:</strong> Beta‑testing av Lek‑Bienes Vokter MVP og datasettinnsamling.</div><div class="status">(Pågående)</div></div>
+                    <div class="roadmap-item"><div><strong>Q3 2025:</strong> Implementering av LEK‑plattformens kjernefunksjonalitet.</div><div class="status">(Neste fase)</div></div>
+                    <div class="roadmap-item"><div><strong>Q4 2025:</strong> Lansering av de første kommersielle app‑modulene.</div><div class="status">(Skalering)</div></div>
+                </div>
+                <p style="margin-top:12px;">For grundigere detaljer om vår visjon og teknologi, last ned vårt <a href="whitepaper.html">Whitepaper</a>
+ eller kontakt oss for investor‑pakke.</p>
+            </section>
+        
+
+            </main>
+
+        <footer class="footer" role="contentinfo">
+            <p class="small"><strong>Kontakt:</strong> <a href="mailto:post@aiinnovate.no">post@aiinnovate.no</a> &nbsp;|&nbsp; <a href="tel:+4747372406">+47 47 37 24 06</a></p>
+            <p class="small" style="margin-top:10px;">Org.nr.: <strong>935 460 387</strong> &nbsp;•&nbsp; Fredriksfrydveien 2, 1792 TISTEDAL</p>
+            <p class="small" style="margin-top:12px; color:var(--muted);">© 2025 AI Innovate AS. Alle rettigheter reservert. &nbsp;|&nbsp; <a href="privacy.html">Personvern</a> &nbsp;•&nbsp; <a href="terms.html">Ansvarserklæring</a> &nbsp;•&nbsp; </a></p>
+        </footer>
+    </div>
 </body>
 </html>
